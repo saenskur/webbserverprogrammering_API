@@ -1,0 +1,17 @@
+body {margin:0;}
+.main {margin:0}
+.top {
+    text-align: center;
+    background-color: wheat;
+    position: absolute;
+    top:15%;
+    width:100%;
+}
+.bottom { 
+    text-align: center;
+    background-color: wheat;
+    width:100%;
+    margin:0;
+    padding-top:20px;
+    padding-bottom: 20px;
+}

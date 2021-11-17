@@ -1,0 +1,34 @@
+{% load static %}
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="{% static 'Extra/style.css' %}">
+</head>
+<body class="mainBody">
+    <p class="text">Den här texten ska vara vit</p>
+    <h1>This is the homepage</h1>
+    <p>It is, what it is. {{name}}</p>
+    <img src="https://th.bing.com/th/id/R.d6f6b33cb68547f72f9399a5cb0bb440?rik=Aa0PHntf7te%2bXg&pid=ImgRaw&r=0">
+    <br><a href="http://127.0.0.1:8000/Hello/home/">Home Page</a><br>
+    <a href="http://127.0.0.1:8000/Hello/about/">About Page</a><br>
+    <a href="http://127.0.0.1:8000/Hello/contact/">Contact Page</a><br>
+    <a href="http://127.0.0.1:8000/Hello/forms/">Forms Page</a><br>
+    {% block content %}
+    <div>Skriv något efter home/ i urlen för att se en lista
+        <p>Detta kan förändras</p>
+        <ul>
+            {% for frukt in lista %}
+            <li>{{ frukt }}</li>
+            {% endfor%}
+            <li> odynamisk </li>
+        </ul>
+        <head>
+            <title>{{pageTitle}}</title>
+        </head>       
+    </div>
+    {% endblock %}
+</body>
+</html>

@@ -1,0 +1,92 @@
+body, .mainBody, .navbarTop {
+    border:0px;
+    margin:0px;
+    padding: 0%;
+}
+body {
+    overflow: hidden;
+}
+.mainBody {
+    background-color: #EE7C74;
+    padding-top: 3%;
+    
+    padding-bottom: 40%;
+}
+.navbarTop {
+    background-color: white;
+    text-align:center;
+}
+
+.text {
+    text-align: center;
+    color: white;
+} h1.text {
+    font-size: 60px;
+} p.text {
+    font-size: 20px;
+} #ShitText {
+    margin-bottom: 4%;
+}
+
+
+ul.navBarList {
+    list-style-type: none;
+    margin: 0;
+    padding: 0;
+    overflow: hidden;
+    background-color: white;
+    width:100%;
+} li.navBarLI {
+    float: left;
+} li.navBarLI a {
+    display: block;
+    color: black;
+    text-align: center;
+    padding: 28px 20px 12px;
+    text-decoration: none;
+} li.navBarLI img {
+    display: block;
+    max-height:48px;
+    position: absolute;
+    right: 8%;
+    top: 12px;
+    
+}
+  
+  /* Change the link color to #111 (black) on hover */
+li a:hover {
+    text-decoration: underline;
+    background-color: #111;
+    color:white;
+}
+
+.images {
+    list-style-type: none;
+    margin: 0;
+    padding: 0;
+    overflow: hidden;
+    background-color: transparent;
+} li.images {
+    float:left;
+    position: relative;
+    left: 10%;
+    margin-right: 10%;
+    width: 20%;
+} img.icons {
+    display: block;
+    color: black;
+    text-align: center;
+    text-decoration: none;
+    width: 70%;
+    margin-left: auto;
+    margin-right: auto;
+}
+
+
+label.Truth {
+    color:green;
+}
+
+label.Blasphemy:hover {
+    color:red;
+}

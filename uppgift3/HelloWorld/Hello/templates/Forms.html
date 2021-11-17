@@ -1,0 +1,19 @@
+{% load static %}
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <link rel="stylesheet" href="{% static 'Extra/style.css' %}">
+</head>
+<body>
+    <div class="mainBody">
+        <img src="{% static 'Extra/KimKaphwan.gif' %}" style="background-color: transparent;">
+        <form>Are these animated pants the best animated pants you've ever seen?<br>
+            <input type="radio" id="Yes" name="KimPants" value="Yes">
+            <label class="Truth" for="Yes">Yes</label>
+            <input type="radio" id="No" name="KimPants" value="No">
+            <label class="Blasphemy" for="No">No</label>
+        </form>
+        
+    </div>
+</body>    
+</html>
