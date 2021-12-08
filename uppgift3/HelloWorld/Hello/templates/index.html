@@ -16,19 +16,28 @@
     <a href="http://127.0.0.1:8000/Hello/about/">About Page</a><br>
     <a href="http://127.0.0.1:8000/Hello/contact/">Contact Page</a><br>
     <a href="http://127.0.0.1:8000/Hello/forms/">Forms Page</a><br>
-    {% block content %}
-    <div>Skriv något efter home/ i urlen för att se en lista
-        <p>Detta kan förändras</p>
-        <ul>
-            {% for frukt in lista %}
-            <li>{{ frukt }}</li>
-            {% endfor%}
-            <li> odynamisk </li>
-        </ul>
-        <head>
-            <title>{{pageTitle}}</title>
-        </head>       
-    </div>
-    {% endblock %}
+    
+   
+        {% block content %}
+        <div>Skriv något efter home/ i urlen för att se en lista
+            <p>Detta kan förändras</p>
+            <ul>
+                {% for frukt in lista %}
+                <li>{{ frukt }}</li>
+                {% endfor%}
+                <li> odynamisk </li>
+            </ul>
+            <head>
+                <title>{{pageTitle}}</title>
+            </head>       
+        </div>
+        {% endblock %} 
+        {% if user.is_authenticated %}
+            <p>You are logged in.</p>
+        {% else %}
+            <a href="/login">Login Here</a>
+        {% endif %}
+    
+        
 </body>
 </html>
