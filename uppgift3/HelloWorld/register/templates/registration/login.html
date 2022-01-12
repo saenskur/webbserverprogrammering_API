@@ -1,17 +1,23 @@
 {% extends 'index.html' %}
 
+
 {% block title %}
-Login Here
+    <p>You are not logged in, log in to start your training.</p>
+    <br>
+    <h3>Login Here</h3>
 {% endblock %}
 
 {% load bootstrap4 %}
 {% load crispy_forms_tags %}
 
 {% block content %}
-<form method="post" class="form-group">
+<form method="post" class="formgroup">
     {% csrf_token %}
     {{form|crispy}}
     <p>Don't have an account? Create one <a href="/register">here</a></p>
     <button type="submit" class="btn btn-success">Login</button>
-    </form>
+</form>
+<p class="text">
+    Test
+</p>
 {% endblock %}

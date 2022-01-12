@@ -8,16 +8,26 @@
     <link rel="stylesheet" href="{% static 'Extra/style.css' %}">
 </head>
 <body class="mainBody">
-    <p class="text">Den här texten ska vara vit</p>
-    <h1>This is the homepage</h1>
-    <p>It is, what it is. {{name}}</p>
-    <img src="https://th.bing.com/th/id/R.d6f6b33cb68547f72f9399a5cb0bb440?rik=Aa0PHntf7te%2bXg&pid=ImgRaw&r=0">
+    <div id="Kim_Dojo" class="text">
+        <h1>Welcome to Kim Kaphwan's dojo</h1>
+        <img src="{% static 'Extra/Kim_stance.gif' %}">
+        <img src="{% static 'Extra/Chang_stance.gif' %}">
+        <img src="{% static 'Extra/Choi_stance.gif' %}">
+    </div>
+    
     <br><a href="http://127.0.0.1:8000/Hello/home/">Home Page</a><br>
     <a href="http://127.0.0.1:8000/Hello/about/">About Page</a><br>
     <a href="http://127.0.0.1:8000/Hello/contact/">Contact Page</a><br>
     <a href="http://127.0.0.1:8000/Hello/forms/">Forms Page</a><br>
     
-   
+    {% block title %}
+        {% if user.is_authenticated %}
+            <p>You are logged in, but are you ready for your Taekwando training?</p>
+        {% else %}
+            <p>You are not logged in, log in to start your training.</p>
+        {% endif %}
+    {% endblock %}
+    
         {% block content %}
         <div>Skriv något efter home/ i urlen för att se en lista
             <p>Detta kan förändras</p>

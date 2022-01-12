@@ -90,3 +90,14 @@ label.Truth {
 label.Blasphemy:hover {
     color:red;
 }
+
+
+.text#Kim_Dojo {
+    background-color: chartreuse;
+    border-radius: 9px;
+}
+
+.formgroup {
+    color: blue;
+    background-color: black;
+}
