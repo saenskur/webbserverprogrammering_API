@@ -1,0 +1,48 @@
+{% extends "navbar/nav.html" %}
+{% load static %}
+{% load index %}
+{% block extrahead %}
+<link rel="stylesheet" href="{% static 'blogg/style.css' %}">
+{% endblock %}
+{% block content %}
+    <form class="forecastAPI" action="{% url 'main:weatherSearch' %}" method="POST">
+        {% csrf_token %}
+        <label for="city">Name a city and how many days of forecast you want.</label><br>
+        {{form}}
+
+        <input type="submit" value="add">
+    </form>
+
+<!-- <form action="{% url 'main:weatherSearch' %}" method="POST">
+    {% csrf_token %}
+    <label for="quantity">How many days of forecast would you like?</label>
+    <input type="number" step="1" id="quantity" name="quantity" min="1" max="10" value="1">
+    <input type="submit" value="search">
+</form> -->
+
+{% for i in range %}
+<div class="mainpage">
+    {% if forloop.counter == 1 %}
+        <p>Today</p>
+    {% else %}
+        <p>Day: {{forloop.counter}}</p>
+    {% endif %}
+    {% for key, value in mydict.items %}
+        {% if key == "name" %}
+            <p>City: {{value}}</p>
+        {% elif key == "temp_c" %}
+            <span>Temperature: {{value|index:i}} °C</span>
+        {% elif key == "text" %}
+            <span id="text">Weather: {{value|index:i}}</span>
+        {% elif key == "date" %}
+            <p>Forecast date {{value|index:i}}</p>
+        {% elif key == "icon" %}
+            <img src="{{value|index:i}}">
+        {% else %}
+            <p>{{key}}: {{value}}</p>
+        {% endif %}
+    {% endfor %}
+</div>
+
+{% endfor %}
+{% endblock %}
