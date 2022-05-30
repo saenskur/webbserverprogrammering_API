@@ -1,0 +1,14 @@
+{% extends "navbar/nav.html" %}
+{% load static %}
+{% block extrahead %}
+<link rel="stylesheet" href="{% static 'blogg/style.css' %}">
+{% endblock %}
+{% block content %}
+{% for post in queryset %}
+    <div class="mainpage">
+        <h2>{{post.title}}</h2><br>
+        <p id="author">Written by: {{post.author}}</p>
+        <p class="content">{{post.content}}</p>
+    </div>
+{% endfor %}
+{% endblock %}

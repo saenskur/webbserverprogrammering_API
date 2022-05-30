@@ -1,0 +1,7 @@
+<h3> Mitt api </h3>
+{% if pokemon_name %}
+<p> Min pokemon är: {{pokemon_name}} och har typerna <br>
+    {% for type in pokemon_type %}
+    {{type}} <br>
+    {% endfor%}
+{% endif %}

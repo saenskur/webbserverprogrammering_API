@@ -98,6 +98,8 @@ label.Blasphemy:hover {
 }
 
 .formgroup {
-    color: blue;
-    background-color: black;
+    display:table;/* shrinks to fit content */
+    margin:auto;
+    text-align: center;
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
 }

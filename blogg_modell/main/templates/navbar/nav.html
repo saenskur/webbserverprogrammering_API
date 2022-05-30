@@ -1,0 +1,27 @@
+{% load static %}
+<html>
+    <head>
+        <link rel="stylesheet" href="{% static 'navbar/style.css' %}">
+        {% block extrahead %}{% endblock %}
+    </head>
+<body>
+    <div class="topnav">
+        <a class="active" href="/blogg/">Home</a>
+        <a href="/blogg/weather/">Weather Forecast</a>
+        {% if user.is_authenticated %}
+            <p id="navUser">You are logged in as {{user}}.</p>
+        {% else %}
+            <a href="/login">Login</a>
+        {% endif %}
+        <form action="{% url 'main:search' %}" method="post">
+            {% csrf_token %}
+            <input type="text" placeholder="Search.." name="search">
+        </form>
+    </div>
+    {% block content %}
+        <p>
+            (Block Content goes here.)
+        </p>
+    {% endblock %}
+</body>
+</html>
